@@ -9,7 +9,10 @@
 </head>
 <body>
     <div id="app">
-        <div class="mail_section" v-for="element in email_list">
+        <div v-if="email_list.length < 10">
+            Attendi fino al caricamento delle mail...
+        </div>
+        <div class="mail_section" v-for="element in email_list" v-else>
             {{ element }}
         </div>
     </div>

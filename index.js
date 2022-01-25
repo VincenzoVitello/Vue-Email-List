@@ -5,13 +5,15 @@ let app = new Vue ({
     },
     mounted: function(){
         for(let i = 0; i<10; i++){
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then( (response) => {
+            axios
+            .get('https://flynn.boolean.careers/exercises/api/random/mail')
+            .then( (outcome) => {
                 // handle success
-                this.email_list.push(response.data.response)
+                this.email_list.push(outcome.data.response)
                 console.log(this.email_list)
+                console.log(outcome)
             })
-            .catch(function (error) {
+            .catch( (error) => {
                 // handle error
                 console.log(error)
             });
