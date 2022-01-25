@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- Inclusione Axios -->
     <title>Document</title>
 </head>
 <body>
     <div id="app">
-        <div v-if="email_list.length < 10">
-            Attendi fino al caricamento delle mail...
-        </div>
-        <div class="mail_section" v-for="element in email_list" v-else>
-            {{ element }}
+        <div class="container">
+            <h1>Lista eMail Casuali</h1>
+            <div class="email_container">
+                <div v-if="email_list.length < 10">
+                    Attendi fino al caricamento delle mail...
+                </div>
+                <div class="mail_section" v-for="element in email_list" v-else>
+                    {{ element }}
+                </div>
+            </div>
+           
         </div>
     </div>
 
